@@ -41,7 +41,7 @@ namespace MakeupScheduling.Adapters
 			View view = convertView;
 			if (view == null) // no view to re-use, create new
 				view = context.LayoutInflater.Inflate(Resource.Layout.CustomView, null);
-			view.FindViewById<TextView>(Resource.Id.Text1).Text = item.StartTime.ToShortTimeString();
+			view.FindViewById<TextView>(Resource.Id.Text1).Text = item.StartTime.ToString(@"hh\:mm");
 			view.FindViewById<TextView>(Resource.Id.Text2).Text = item.Name;
 			return view;
 		}

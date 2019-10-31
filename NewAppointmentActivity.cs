@@ -85,19 +85,19 @@ namespace MakeupScheduling
 		}
 		private void SetStartTime(object sender, TimePickerDialog.TimeSetEventArgs e)
 		{
-			startTime = new TimeSpan(e.HourOfDay,e.Minute,0);
+			appointment.StartTime = new TimeSpan(e.HourOfDay,e.Minute,0);
 			startTimeText.Text = e.HourOfDay + ":" + e.Minute;
 		}
 		private void SetEndTime(object sender, TimePickerDialog.TimeSetEventArgs e)
 		{
-			endTime = new TimeSpan(e.HourOfDay, e.Minute, 0);
+			appointment.EndTime = new TimeSpan(e.HourOfDay, e.Minute, 0);
 			endTimeText.Text = e.HourOfDay+":"+e.Minute;
 		}
 		private void SetAppointmentView(string mode)
 		{
 			name.Text = appointment.Name;
-			startTimeText.Text = appointment.StartTime.ToShortTimeString();
-			endTimeText.Text = appointment.EndTime.ToShortTimeString();
+			startTimeText.Text = appointment.StartTime.ToString();
+			endTimeText.Text = appointment.EndTime.ToString();
 			extras.Checked = appointment.Extras;
 		}
 
@@ -109,19 +109,16 @@ namespace MakeupScheduling
 			if (mode != "edit")
 			{
 				int[] array = this.Intent.GetIntArrayExtra("date");
-				appointment.StartTime = new DateTime(array[0], array[1], array[2], startTime.Hours, startTime.Minutes, startTime.Seconds);
-				appointment.EndTime = new DateTime(array[0], array[1], array[2], endTime.Hours, endTime.Minutes, endTime.Seconds);
-
+				appointment.Date = new DateTime(array[0], array[1], array[2]);
 				AppointmentDatabase.Instance.AddAppointment(appointment);
-				Finish();
+
 			}
 			else
 			{
-				appointment.StartTime = appointment.StartTime.Date.Add( new TimeSpan(startTime.Hours, startTime.Minutes, startTime.Seconds));
-				appointment.EndTime = appointment.EndTime.Date.Add(new TimeSpan( endTime.Hours, endTime.Minutes, endTime.Seconds));
 				AppointmentDatabase.Instance.UpdateAppointment(appointment);
-				Finish();
 			}
+
+			Finish();
 		}
 	}
 }

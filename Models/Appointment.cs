@@ -17,10 +17,11 @@ namespace MakeupScheduling.Models
 	{
 		[PrimaryKey, AutoIncrement]
 		public long Id { get; set; }
-		public DateTime StartTime { get; set; }
-		public DateTime EndTime { get; set; }
+		public TimeSpan StartTime { get; set; }
+		public TimeSpan EndTime { get; set; }
 		public string Name { get; set; }
 		public float Price { get; set; } = 1000;
 		public bool Extras { get; set; } = false;
+		public DateTime Date { get; set; }
 	}
 }

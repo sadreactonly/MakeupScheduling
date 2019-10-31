@@ -64,7 +64,7 @@ namespace MakeupScheduling
 		}
 		public List<Appointment> GetAppointmentsFromDay(DateTime date)
 		{
-			var list = database.Table<Appointment>().ToList().Where(x => x.StartTime.Date==date).ToList();
+			var list = database.Table<Appointment>().ToList().Where(x => x.Date==date).ToList();
 			list.Sort((x, y) => x.StartTime.CompareTo(y.StartTime));
 			return list;
 		}
