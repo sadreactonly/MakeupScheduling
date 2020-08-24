@@ -1,18 +1,42 @@
-<?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <TextView
-        android:text="Name"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView1" />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/editText2" />
+   	<android.support.design.card.MaterialCardView
+		android:minWidth="25px"
+		android:minHeight="25px"
+		android:layout_margin="25px"
+		android:layout_width="match_parent"
+		android:layout_height="100dp"
+        android:id="@+id/materialCardView1">
+        <LinearLayout
+			android:orientation="vertical"
+			android:minWidth="25px"
+			android:minHeight="25px"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:id="@+id/linearLayout2" >
+            <TextView
+            android:text="Name"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView1" />
+           <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/editText2" />
+        </LinearLayout>
+    </android.support.design.card.MaterialCardView>
+
+    <android.support.design.card.MaterialCardView
+		android:minWidth="25px"
+		android:minHeight="25px"
+		android:layout_margin="25px"
+		android:layout_width="match_parent"
+		android:layout_height="100dp"
+        android:id="@+id/materialCardView2">
     <LinearLayout
         android:orientation="horizontal"
         android:minWidth="25px"
@@ -20,65 +44,51 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/linearLayout1" >
-    <TextView
-        android:text="Start time"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:gravity="center_vertical"
-        android:id="@+id/textView2" />
-    <TextView
-            android:text="Not set"
-            android:textAppearance="?android:attr/textAppearanceMedium"
+        <Button
+            android:text="Set start time"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:gravity="center_vertical"
-            android:id="@+id/textView4" />
-     <Button
-            android:text=">"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+                android:layout_weight="1"
             android:id="@+id/button2" />
-    </LinearLayout>
-    <LinearLayout
+   
+        <Button
+            android:text="Set end time"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:id="@+id/button3" />
+     </LinearLayout>
+    </android.support.design.card.MaterialCardView>
+   
+     <android.support.design.card.MaterialCardView
+		android:minWidth="25px"
+		android:minHeight="25px"
+		android:layout_margin="25px"
+		android:layout_width="match_parent"
+		android:layout_height="100dp"
+        android:id="@+id/materialCardView3">
+        <LinearLayout
         android:orientation="horizontal"
         android:minWidth="25px"
         android:minHeight="25px"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/linearLayout2" >
-       <TextView
-        android:text="End time"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:gravity="center_vertical"
-        android:id="@+id/textView3" />
+        android:id="@+id/linearLayout4" >
         <TextView
-            android:text="Not set"
-            android:gravity="center_vertical"
+            android:text="Extras"
+            android:layout_weight="1"
+            android:textAlignment="center"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/textView5" />
-        <Button
-            android:text=">"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:id="@+id/button3" />
-       
-     </LinearLayout>
-   
-
-  
-   
-    <CheckBox
-        android:text="Extras"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/checkBox1" />
+            android:id="@+id/textView2" />
+        <CheckBox
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/checkBox1" />
+        </LinearLayout>
+        </android.support.design.card.MaterialCardView>
     <Button
         android:text="Save"
         android:layout_width="wrap_content"
@@ -92,5 +102,4 @@
         android:layout_height="wrap_content"
         android:layout_gravity ="center_horizontal"
         android:id="@+id/button4" />
-
 </LinearLayout>

@@ -43,8 +43,8 @@ namespace MakeupScheduling
             NavigationView navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
             navigationView.SetNavigationItemSelectedListener(this);
 
-			listView = FindViewById<ListView>(Resource.Id.listView1); // get reference to the ListView in the layout
-			listView.ItemClick += OnListItemClick;  // to be defined
+			listView = FindViewById<ListView>(Resource.Id.listView1); 
+			listView.ItemClick += OnListItemClick; 
 			calendarView = FindViewById<CalendarView>(Resource.Id.calendarView1);
 			calendarView.DateChange += CalendarView_DateChange;
 		}
@@ -133,37 +133,18 @@ namespace MakeupScheduling
         {
             int id = item.ItemId;
 
-            if (id == Resource.Id.nav_camera)
+            if (id == Resource.Id.nav_manage)
             {
 				// Handle the camera action
-				Intent intent = new Intent(this, typeof(CalendarActivity));
-				StartActivity(intent);
+				Intent intent = new Intent(this, typeof(ReportsActivity));
+			    StartActivity(intent);
             }
-            else if (id == Resource.Id.nav_gallery)
-            {
-
-            }
-            else if (id == Resource.Id.nav_slideshow)
-            {
-
-            }
-            else if (id == Resource.Id.nav_manage)
-            {
-
-            }
-            else if (id == Resource.Id.nav_share)
-            {
-
-            }
-            else if (id == Resource.Id.nav_send)
-            {
-
-            }
-
+         
             DrawerLayout drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
             drawer.CloseDrawer(GravityCompat.Start);
             return true;
         }
+      
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);

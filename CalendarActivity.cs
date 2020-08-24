@@ -19,7 +19,7 @@ namespace MakeupScheduling
 		{
 			base.OnCreate(savedInstanceState);
 			Xamarin.Essentials.Platform.Init(this, savedInstanceState);
-			SetContentView(Resource.Layout.main_page);
+			//SetContentView(Resource.Layout.main_page);
 			// Create your application here
 		}
 	}

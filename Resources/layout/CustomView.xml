@@ -2,7 +2,7 @@
 <RelativeLayout  xmlns:android="http://schemas.android.com/apk/res/android"
    android:layout_width="fill_parent"
    android:layout_height="wrap_content"
-   android:background="#FFDAFF7F"
+   android:background="@color/abc_hint_foreground_material_light"
    android:padding="8dp">
     <LinearLayout android:id="@+id/Text"
        android:orientation="horizontal"
@@ -11,7 +11,7 @@
        android:paddingLeft="10dip">
         <TextView
          android:id="@+id/Text1"
-         android:text ="kurac"
+         android:text ="time"
          android:layout_width="wrap_content"
          android:layout_height="wrap_content"
          android:textColor="#FF7F3300"
@@ -20,7 +20,7 @@
          />
         <TextView
          android:id="@+id/Text2"
-         android:text ="kurac"
+         android:text ="name"
          android:layout_width="wrap_content"
          android:layout_height="wrap_content"
          android:textSize="20dip"

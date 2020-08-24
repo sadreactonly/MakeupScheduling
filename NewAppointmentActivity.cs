@@ -24,8 +24,7 @@ namespace MakeupScheduling
 
 		CheckBox extras;
 		Appointment appointment = new Appointment();
-		TextView startTimeText;
-		TextView endTimeText;
+
 		TimeSpan startTime;
 		TimeSpan endTime;
 		string mode;
@@ -42,8 +41,6 @@ namespace MakeupScheduling
 			endTimeButton = FindViewById<Button>(Resource.Id.button3);
 			extras = FindViewById<CheckBox>(Resource.Id.checkBox1);
 
-			startTimeText = FindViewById<TextView>(Resource.Id.textView4);
-			endTimeText = FindViewById<TextView>(Resource.Id.textView5);
 			deleteButton = FindViewById<Button>(Resource.Id.button4);
 			startTimeButton.Click += StartTimeDialog_Click;
 			endTimeButton.Click += EndTimeDialog_Click;
@@ -86,18 +83,18 @@ namespace MakeupScheduling
 		private void SetStartTime(object sender, TimePickerDialog.TimeSetEventArgs e)
 		{
 			appointment.StartTime = new TimeSpan(e.HourOfDay,e.Minute,0);
-			startTimeText.Text = e.HourOfDay + ":" + e.Minute;
+			startTimeButton.Text = e.HourOfDay + ":" + e.Minute;
 		}
 		private void SetEndTime(object sender, TimePickerDialog.TimeSetEventArgs e)
 		{
 			appointment.EndTime = new TimeSpan(e.HourOfDay, e.Minute, 0);
-			endTimeText.Text = e.HourOfDay+":"+e.Minute;
+			endTimeButton.Text = e.HourOfDay+":"+e.Minute;
 		}
 		private void SetAppointmentView(string mode)
 		{
 			name.Text = appointment.Name;
-			startTimeText.Text = appointment.StartTime.ToString();
-			endTimeText.Text = appointment.EndTime.ToString();
+			startTimeButton.Text = appointment.StartTime.ToString();
+			endTimeButton.Text = appointment.EndTime.ToString();
 			extras.Checked = appointment.Extras;
 		}
 

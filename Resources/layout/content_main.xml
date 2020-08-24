@@ -7,17 +7,33 @@
     android:orientation="vertical"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/app_bar_main">
+      <android.support.design.card.MaterialCardView
+		android:minWidth="25px"
+		android:minHeight="25px"
+		android:layout_margin="25px"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/materialCardView3" >
     <CalendarView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:minWidth="25px"
         android:minHeight="25px"
         android:id="@+id/calendarView1" />
+</android.support.design.card.MaterialCardView>
+    <android.support.design.card.MaterialCardView
+		android:minWidth="25px"
+		android:minHeight="25px"
+		android:layout_margin="25px"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/materialCardView13" >
     <ListView
         android:minWidth="25px"
         android:minHeight="25px"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/listView1" />
+    </android.support.design.card.MaterialCardView>
 
 </LinearLayout>
